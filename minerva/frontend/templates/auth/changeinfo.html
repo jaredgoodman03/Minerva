@@ -45,11 +45,11 @@
                             <label for="cell">Add/remove available items</label>
                             <button class="add-remove-button" onclick="event.preventDefault(); addItem()"><b>+</b></button>
                             {% for i in range(items | length) %}
-                            <div id="item-field-{{ i }}">
+                            <div id="item-field-{{ items[i] }}">
                                 <div class="input-group">
                                     <input type="text" name="name{{ items[i] }}" id="name{{ items[i] }}" class="form-control width100" value="{{ items[i] }}"> 
                                     <span class="input-group-btn">
-                                        <button class="add-remove-button" onclick="event.preventDefault(); removeItem({{i}})"><b>–</b></button>
+                                        <button class="add-remove-button" onclick="event.preventDefault(); removeItem('{{ items[i] }}')"><b>–</b></button>
                                     </span>
                                 </div>
                                 <br>
